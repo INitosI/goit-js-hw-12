@@ -1,0 +1,57 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  display: flex;
+  max-width: 360px;
+  max-height: 200px;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* картинка */
+.gallery-link {
+  display: block;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* блок с инфой */
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8px;
+  list-style: none;
+  margin: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+}
+
+.info-item b {
+  font-weight: 600;
+  margin-bottom: 4px;
+}

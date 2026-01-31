@@ -1,0 +1,85 @@
+.iziToast-message,
+.iziToast-texts {
+  margin: 0 !important;
+}
+.custom-toast {
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  width: 432px !important;
+  max-height: 88px !important;
+  opacity: 1 !important;
+  background-color: red !important;
+  border: none !important;
+  padding: 0;
+}
+
+.iziToast-capsule {
+  max-height: 88px !important;
+}
+
+.custom-toast * {
+  color: #fafafb !important;
+}
+
+.iziToast-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-toast .iziToast-message-text {
+  color: #fafafb !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.custom-toast .iziToast-body {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #fafafb !important;
+  padding-left: 32px !important;
+  margin: 20px !important;
+  display: flex;
+  align-items: center;
+}
+
+.custom-toast .iziToast-body > div {
+  color: #fafafb !important;
+}
+
+.custom-toast .iziToast-icon {
+  margin-right: 8px !important;
+}
+
+.custom-toast .iziToast-close {
+  display: none !important;
+}
+
+/* Свой крестик */
+.toast-close-btn {
+  width: 12px;
+  height: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 24px;
+  color: #fafafb;
+  font-size: 12px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* .iziToast-close {
+  fill: white !important;
+  width: 16px !important;
+  height: 16px !important;
+} */
