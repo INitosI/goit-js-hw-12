@@ -52,6 +52,7 @@ const searchInput = document.querySelector('.form input');
 form.addEventListener('submit', event => {
   event.preventDefault();
   currentPage = 1;
+  firstItemHeight = 0;
   clearGallery();
 
   if (!form.checkValidity()) {
@@ -97,10 +98,17 @@ async function fetchAndRenderImages(searchQuery, page = 1) {
 
     createGallery(hits);
 
-    firstItemHeight =
-      document
-        .querySelector('.gallery')
-        ?.firstElementChild?.getBoundingClientRect().height ?? 0;
+    if (page > 1) {
+      const cardHeight =
+        document
+          .querySelector('.gallery')
+          ?.firstElementChild?.getBoundingClientRect().height ?? 0;
+
+      window.scrollBy({
+        top: cardHeight * 2,
+        behavior: 'smooth',
+      });
+    }
 
     const totalPages = Math.ceil(totalHits / PER_PAGE);
     const hasMore = page < totalPages;
@@ -118,9 +126,5 @@ async function fetchAndRenderImages(searchQuery, page = 1) {
     );
   } finally {
     hideLoader();
-    window.scrollBy({
-      top: firstItemHeight * 5,
-      behavior: 'smooth',
-    });
   }
 }
