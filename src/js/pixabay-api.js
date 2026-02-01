@@ -9,15 +9,35 @@ axios.defaults.params = {
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
-  per_page: 9,
+  per_page: 15,
 };
 
-export function getImagesByQuery(query) {
-  return axios
-    .get('', {
+export async function getImagesByQuery(query, page) {
+  try {
+    const response = await axios.get('', {
       params: {
         q: query,
+        page: page,
       },
-    })
-    .then(response => response.data);
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 }
+
+// export async function fetchAndRenderImages(searchQuery) {
+//   const imagesArray = [];
+//   try {
+//     const { hits } = await getImagesByQuery(searchQuery);
+//     if (!hits.length) throw new Error('No images');
+//     createGallery(hits);
+//   } catch (error) {
+//     errorToast(
+//       'Sorry, there are no images matching your search query. Please, try again!'
+//     );
+//   } finally {
+//     hideLoader();
+//     showLoadMoreButton();
+//   }
+// }
