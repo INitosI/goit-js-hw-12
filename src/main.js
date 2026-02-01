@@ -58,6 +58,7 @@ form.addEventListener('submit', event => {
     errorToast(
       'Sorry, there are no images matching your search query. Please, try again!'
     );
+    hideLoadMoreButton();
     return;
   }
   showLoader();
